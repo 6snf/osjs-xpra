@@ -154,6 +154,8 @@ export default class ApplicationXpra extends Application {
         win._focus();
       });
 
+      this.map[wid] = new Layer(wid, props);
+
       win._on('keydown', (ev, code) => {
         return this.client.processKey(wid, true, ev, code);
       });
